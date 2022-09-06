@@ -29,8 +29,7 @@ if [ -d /sys/devices/platform/pwm-fan ]; then
     })
 else
     logger -p user.info -t "pwmfan" "not found cooling device"
-    if [ -d /sys/class/pwm/pwmchip1 ]; then
+    if [ -d /sys/class/pwm/pwmchip0 ]; then
         nohup /usr/bin/fa-fancontrol-direct.sh&
     fi
 fi
-
